@@ -922,12 +922,12 @@
 \newcommand{\HUST@attention}{
 \begin{center}\kai\xiaoyi
 	\textbf{填\,表\,注\,意\,事\,项}
-	\vspace{2.0cm} \sihao
+	\vspace{2.0cm} 
 \end{center}
 
-\parbox[t][7.4cm][t]{\textwidth}{\songti\sihao[1.5]
-\begin{center}
-	\songti\sihao[1.5]
+%\parbox[t][7.4cm][t]{\textwidth}{\songti\sihao[1.5]
+\begin{center}\songti\sihao[2.5]
+	
 	
 %	\renewcommand{\chenum}{}
 %	\newcounter{myatt}
@@ -936,9 +936,10 @@
 %	\renewcommand{\labelenumi}{\zhdig{enumit}} 
 	\def\labelenumi{\theenumi、}\def\theenumi{\zhnum{enumi}}
 
-\onehalfspacing
-	\setlength{\extrarowheight}{2.5pt}
+
+%	\setlength{\extrarowheight}{2.5pt}
 	\begin{enumerate}
+%		\onehalfspacing
 %		[\setlength{\itemsep}{8pt}]
 %		\setcounter{\zhdig{enumi}}{一}
 		\item 本表适用于攻读硕士学位研究生选题报告、学术报告，攻读博士学位研究生文献综述、选题报告、论文中期进展报告、学术报告等。
@@ -948,16 +949,17 @@
 %		\stepcounter{myatt}
 		\item 以上各报告均须存入研究生个人学籍档案。
 		\item 本表填写要求文句通顺、内容明确、字迹工整。
+%		\singlespacing
 	\end{enumerate}
-	\singlespacing
+	
 \end{center}
-}
+%}
 \def\labelenumi{\theenumi)}\def\theenumi{\arabic{enumi}}%好土的方法，不能一劳永逸
 }
 
 \newcommand{\HUST@backsignaturepage}{
 	\parbox[t][7.4cm][t]{\textwidth}{\vspace{5cm}\xiaoer[1.5] \bf
-		\vspace{15cm}
+		\vspace{10cm}
 		\begin{center}
 %			\song\xiaoer[1.5]\bf
 			\setlength{\extrarowheight}{2.5pt}
@@ -965,12 +967,18 @@
 				{\HUST@signaturestudent} & \HUST@title@sep & {\rule[-2pt]{10em}{1pt}}\\
 				\HUST@signaturementor & \HUST@title@sep & {\rule[-2pt]{10em}{1pt}}\\
 				\HUST@signaturedepartment & \HUST@title@sep & {\rule[-2pt]{10em}{1pt}}\\
+%				{\hfill} &  & {\quad\quad\quad 年\quad 月\quad 日\hfill }
 				%    \HUST@csubject & \HUST@title@sep & {\HUST@csubjectname}\\
 %				\HUST@csupervisor & \HUST@title@sep & {\HUST@csupervisorname\hspace{1em}\HUST@csupervisortitle}\\
 %				\HUST@cdept & \HUST@title@sep & {\HUST@cdepartment}
 				%    \HUST@cdefencedate & \HUST@title@sep & {\ziju{3bp}\HUST@defencedate}
 			\end{HUST@tabular}
+			\setlength{\extrarowheight}{2.5pt}
+			\begin{HUST@tabular}{p{10em}rrr}
+				{\hfill} &  & {\quad\quad 年\quad\quad  月\quad\quad  日}
+			\end{HUST@tabular}
 	\end{center}
+	
 }
 }
 
@@ -1089,11 +1097,11 @@
 }
     
  \newcommand{\makesignature}{
- 	\begin{titlepage}
+ 	
 % 		\vspace{-10cm}
 
- 		\HUST@backsignaturepage
- 	\end{titlepage}
+ 	\clearpage\thispagestyle{empty}\HUST@backsignaturepage
+ 	
  	
  }
  \newcommand{\makeattention}{
