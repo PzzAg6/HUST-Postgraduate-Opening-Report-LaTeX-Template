@@ -1,3 +1,6 @@
+# 根据开题报告的内容对原模版进行一定改动
+使用方法和原来差不多，在Cover.tex中修改自己的信息即可，如果还需要进一步改动在`HUSTthesis.cls`中搜索关键词进行更改
+
 # HUST-PhD-Thesis-Latex
 
 HUSTThesis.cls 2024/01/29 version V3.1.1x
