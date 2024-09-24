@@ -12,7 +12,7 @@
 \setmainfont{Times New Roman}
 
 %\includeonly{body/chap02}
-% \setcitestyle{authoryear, open={（},close={）}}
+% \setcitestyle{authoryear, open={( },close={ )}}
 
 \usepackage[stable]{footmisc}
 \usepackage{xcolor}
@@ -105,7 +105,7 @@
 % \leftlinenumbers% Re-issue [left] option
 % \makeatother
 
-
+\addbibresource[location=local]{ref/OPR.bib}
 
 
 \begin{document}
@@ -134,27 +134,130 @@
 
 % \nolinenumbers
 %%% 结论
-\input{body/chapter/cnn.tex}
-\input{body/chapter/univ.tex}
+%\input{body/chapter/cnn.tex}
+%\input{body/chapter/univ.tex}
+
+\chapter{研究背景与意义}
+警察作为社会治安的守护者，肩负着维护社会稳定和公共安全的重任。巡逻是警察日常工作中的重要组成部份。例如，在美国，打击罪犯仅占到警察20\%的精力，其余80\%的精力用于维护公共安全和其他活动\cite{wuschkeWhatPoliceWhere2018}，维护公共安全的职能主要由巡逻实现。预防性巡逻是指警察遵循既定路线在某个区域内巡逻的行动，保持预防性巡逻带来的威慑效应有助于减少潜在犯罪行为，另一方面能够对巡逻覆盖的区域进行紧急事件的快速响应，警察的出现有利于舒缓公共情绪，增加公众的安全感\citep{muaafa2016engineering}。巡逻策略需要保证效率、灵活性、可拓展性\citep{chenDevelopingOnlineCooperative2017}。传统的巡逻策略主要依靠经验和直觉，缺乏科学依据。并且由于政府财政预算方面的限制，警力资源较为有限，巡逻难以覆盖所有的区域。近年来，随着数据采集和分析技术的进步，数据驱动巡逻策略逐渐兴起，通过分析犯罪的时空数据、类型，识别出犯罪高发的热点地区和时间段\citep{bragaHotSpotsPolicing2019a, chaineyImprovingCreationHot2021, hajelaClusteringBasedHotspot2020, tom-jackRoleGeoprocessingMapping2019}，在此基础上制定巡逻策略。针对性地进行热点地区巡逻有助于提高警力资源利用率，保证热点地区的覆盖，同时兼顾非热点地区日常事件的处理。
+
+近年来，随着人工智能、大数据等技术的发展，引入巡逻机器人成为了解决警力不足，提高巡逻效率的一种新的解决方案。巡逻机器人搭载高精度传感器和识别技术使得巡检机器人能够更及时、精确识别潜在的风险，提高巡检效率；另一方面，人工智能技术使得巡逻机器人具备了自动追踪、人脸识别、语音识别等功能，使其具备执行复杂任务的能力。人类警力在长时间巡逻容易疲劳，而为了保证在巡逻过程中对热点地区的长时间的覆盖和及时响应，需要更多的警力部署在周边，而巡逻机器人具备的长续航则能够保证长时间的巡逻，提高了巡逻覆盖率和及时性。2023年9月，纽约警察局宣布开始采用Knightscope公司的巡逻机器人K5与人类警察协同完成纽约市中心地铁站日常巡逻工作\citep{mays400poundRobotGets2023}，K5机器人能够连续工作18小时，并配备了高清摄像头收集数据，乘客在有需要时也可通过机器人呼叫警察。此外，Knightscope公司在美国其他地区的实验表明引入巡逻机器人后，犯罪数量均有不同程度地减少。
+
+通过在巡逻过程中引入巡逻机器人，进行人机协同的巡逻，有助于发挥人与机器人在巡逻过程中的优势，进一步提升巡逻的效率。人类警察擅长处理非常规事件，但是工作时长以及精力有限，所以能够覆盖的巡逻半径有一定的限制，而机器人则能够完成常规巡逻并负责处理常规任务，长时间的续航使得巡逻的覆盖半径增加。在警力资源有限的情况下，人类警察能够将更多的精力面对紧急事件的响应，有助于改善服务质量，维护警察的社会形象。例如，在杭州余杭区，为构建智慧巡检模式，提升辖区居民安全感，执法机关投入巡逻机器人进行道路巡检以解决商业街区在人流高峰时段警力不足的问题，在日常的巡逻过程中，机器人针对异常完成警告以及取证工作，执法机构能够远程控制机器人协同处理任务，实现人机协同的新模式\citep{YuHangFaBuShangGangYuHangShouGeChengShiXunLuoZhiNengJiQiRen2024}。
+
+%	虽然人机协同在工业生产等领域已得到广泛应用，然而，将人机协同应用于警察巡逻，特别是针对巡逻路径规划的研究，相对较少，本研究将人机协同的警察巡逻问题聚焦在巡逻中的任务分配以及环境不确定性中以解决人机协同的巡逻路径优化问题。
+
+对于存在结构化、流程化的场景，比如车间生产\citep{huangSolvingHumanrobotCollaborative2024, yaoTaskReallocationHumanrobot2024}或者物流仓储\citep{zhenHowDeployRobotic2023a, qinPerformanceAnalysisMultitote2024, lofflerHumanrobotCooperationCoordinating2023a}中，由于任务分配、协作模式相对固定，人机协同的合作模式已经得到较为广泛地应用。而在各类开放式的场景，由于需要考虑更多外部性因素，因此此类人机协同的合作模式的研究得到了广泛地关注。例如，在城市物流中的无人机协同配送问题\citep{murray2015flying, zhou2023exact}。而在城市巡逻的背景下，由于犯罪发生的时空不确定性\citep{chenevoyDeterminingOptimalPolice2022}，如何在处理各类非常规事件的同时，保持巡逻的效率以及有效性成为解决人机协同巡逻的关键。巡逻机器人的引入虽然从一定程度提升了巡逻效率和有效性，但在实现协同的过程中还有诸多问题需要考虑：
+\begin{enumerate}
+	\item 巡逻机器人对于效率的提升是有限的，在成本的限制下，部署多少以及如何部署能够最大化巡逻的效果。
+	\item 人类警察和巡逻机器人的工作时长以及能够处理的任务存在差异性，二者在完成巡逻任务时如何协同，以及如何衔接实现持续性地巡逻降低犯罪发生的风险。
+	\item 警务的突发性以及机械故障会造成巡逻的中断，如何在巡逻中考虑鲁棒性，使得在中断出现时仍旧可以保持一定的巡逻效率。
+\end{enumerate}
+
+
+%	也是考虑人机协同的巡逻策略需要考虑的问题。
+%	巡逻的有效性关注的是巡逻后的评价指标，巡逻的有效性是关注的警力资源的利用率。针对..本研究关注引入巡逻机器人巡逻前的投入，如何安排风险和不确定性。本研究通过
+
+
+
+\chapter{国内外研究现状}
+
+\section{警力巡逻问题}
+
+警力巡逻问题旨在利用有限的警力资源，最大限度地提升巡逻的有效性和效率\citep{halfordBetterUnderstandingDemand2017}。警务效率(efficiency)侧重于警力资源的利用效率，即当前投入的警力能够在多大程度上完成任务，对于警力巡逻问题主要体现在热点地区的覆盖率，覆盖巡逻节点的时间、频率等。警务有效性(effectiveness)更多地反映警力资源部署后的具体效果，由于公众对于警务工作的评价取决于警察能否完成任务\citep{fieldingReassurancePolicingCommunity2006}，即能否减少犯罪或者提升社会的安全感，所以有效性主要从这两个层面出发考虑响应的有效性(reactive effctiveness)和积极主动的有效性(proactive effective)\citep{chenevoyDeterminingOptimalPolice2022}。响应有效性是指警力在接到报警后，快速到达现场，迅速控制事态，解决问题的能力。主动有效性则指警力在预防犯罪、维护社会秩序方面的能力，例如降低犯罪率、提升民众安全感、提高巡逻覆盖率等。本节主要关注警力巡逻中的警务效率、警务有效性以及兼顾警务效率与有效性。
+
+\textbf{警务效率}。\citep{dewilMinimumCostNetwork2015a}根据最小费用流问题构建了最大覆盖的巡逻问题，通过实验验证了该建模方法能够更有效解决当前问题，并能够解决实际应用中的拓展问题。\citep{auadLocationcoverageModelsPreventing2017a}考虑了巡逻中的时间限制和移动距离限制，以及覆盖距离对警力支援覆盖度的影响，目标是最大化巡逻的覆盖度。\citep{caparImprovedFormulationMaximum2015}提出了新的混合整数线性规划模型，在随机生成的模型以及真实数据下相比\citep{keskinAnalysisIntegratedMaximum2012}提升了46\%和并测试了不同位置开始巡逻、延迟巡逻开始时间、考虑午休的三种场景对于覆盖率的影响。\citep{luoHotSpotCoverage2023a}引入了协同巡逻的概念，将警力持续部署在热点周边考虑作为巡逻问题的约束，而不是作为目标函数使得在热点的巡逻时间最大化，为保证能够持续部署在热点周边，需要多个警力单位协同巡逻，并将警力的初始位置作为决策变量，增加巡逻路径的灵活性。除了考虑响应时间外，巡逻效率也考虑节点巡逻频率、访问间隔等指标\citep{chenDESIGNINGDAILYPATROL2015, guoBalancingEfficiencyUnpredictability2023, katoleBalancingPrioritiesPatrolling2023, liuMultirobotPathPlanning2024}。
+
+\textbf{警务有效性}。\citep{takamiyaPlanningHighResponsive2011}使用维诺图（Network Voronoi Diagram, NVD)描述节点之间的平均响应时间，使得在完成巡逻任务的同时，确保响应周围紧急事件的时间最小化。为了进一步提高巡逻效率，针对巡逻中出现的随机事件，\citep{saint-guillainTimedependentStochasticVehicle2021}基于需求的历史数据得到的概率信息，并考虑旅行时间的不确定性，提出基于不确定性的补救策略，构建了两阶段的随机规划车辆路径优化问题，目标是巡逻的过程中期望的响应时间最小，实验部分作者基于仿真实验对比了现实中的巡逻策略，该策略由于利用时空概率信息，因此在多项指标上都优于当前实际的策略。
+
+效率和有效性之间存在着一定的冲突。为了提高效率，警力可能过度集中于热点地区，造成警力过于分散，导致一些区域缺乏警力，影响治安效果；而为了减少响应时间，提升有效性，可能造成警力过度投入，降低效率。 如何在效率和有效性之间找到平衡，是警力巡逻路径优化问题需要解决的核心问题。
+
+\textbf{兼顾警务效率与有效性}。多数研究考虑了多目标规划的问题，保证热点巡逻（效率）的同时兼顾其他有效性指标的优化。\citep{chawatheOrganizingHotspotPolice2007a}用加权图来表示道路网络，并基于图的拓扑结构和热点地区的重要性来确定确定巡逻路线，目标是最大化覆盖热点区域并最小化巡逻路线的成本。\citep{keskinAnalysisIntegratedMaximum2012}研究了高速公路巡逻车路线优化问题，文章构建了混合整数规划模型目标是最大化巡逻车覆盖热点区域的时间同时确保时间可行性和预算有效性，作者设计了局部搜索和禁忌搜索算法求解该问题，并通过大量随机数据和真实案例进行了测试，得到了部署的警力下的最优响应时间。\citep{lauPatrolSchedulingUrban2016}研究了城市轨道交通网络中警力巡逻调度问题，作者考虑了由于覆盖度最大化以减少由于恐怖袭击出现时的人口损失，以及最小化总距离和工作时间，构建了多目标规划模型，并提出了随机化巡逻方案增加了巡逻策略的随机性，文章最终通过对新加坡地铁网络的实证研究，验证了算法的有效性和可拓展性。\citep{hsiehNovelEncodingScheme2015}从多周期的车辆路径优化问题出发，考虑在最大化巡逻覆盖的同时最小化巡逻距离，采用基于免疫的进化算法求解问题。\citep{liBicriteriaDynamicLocationrouting2014b}考虑选址-路径问题(Location-Routing Problem, LRP)，该模型允许巡逻路线从多个站点出发 ，一方面减少巡逻车在路上行驶的时间，另一方面能够使得巡逻路线更灵活，便于实际情况进行调整，由于需要考虑不同时段内的巡逻决策，所以该模型首次在LRP中加入了时间窗，此外选址仅考虑单个周期的决策，避免了LRP在短期规划和长期规划带来的冲突，模型考虑了最大化热点区域覆盖率以及最小化临时站点的选择成本、车辆行驶成本，为解决多目标优化问题，作者采用$\epsilon -$约束方法将多目标转化为单目标问题，作者将该问题分解选址和路由问题，分别使用贪婪算法和模拟退火算法进行求解，通过迭代优化后得到问题的解。
+
+部分巡逻问题考虑了兼顾热点地区与非热点地区的巡逻问题，即在保证日常巡逻的过程中同时减少响应时间。一类相关的问题是多车覆盖巡回问题（Multivehicle Cover Touring Problem, m-CTP)\citep{hachichaHeuristicsMultivehicleCovering2000}，\citep{otaFlowbasedModelMultivehicle2024}将节点是否需要访问分为三类，并着重考虑了路线平衡因素，模型中引入了平衡路线的决策变量，确保每一条路径访问的节点数量维持在相近水平，并使用分支定界法和偏差随机键遗传算法来求解该模型。实验结果表明，两种方法都能够有效地解决问题，而遗传算法在解决大型实例时计算时间更短。此外，\citep{tanIntransitVigilantCovering2016}除了考虑节点的覆盖，同时考虑边的覆盖。\citep{huizingMedianRoutingProblem2020a}将P-中位问题(P-Median Problem)和车辆路径优化问题结合，提出了一种兼顾预防性巡逻以及响应紧急时间的中位路由问题（Median Routing Problem, MRP)的模型，并提出了多种求解MRP的启发式算法。\citep{katoleBalancingPrioritiesPatrolling2023}提出了一种分布式在线算法，算法首先根据优先级生成离线路径，此后根据离线路径中节点的闲置时间选取路径再进行分配，该算法能够平衡优先级节点和非优先级节点的访问次数，并且具备一定的拓展性。
+
+也有研究从其他指标刻画了巡逻的效率与有效性，\citep{chenDevelopingOnlineCooperative2017}比较了包括仿真、强化学习、运筹学在内的多种决策方法在警力巡逻问题中的应用，同时提出了多种用于评估巡逻策略的指标的计算方法。
+%idleness, frequency, latency
+
+%	\section{覆盖热点的巡逻路径规划问题}
+%	\begin{itemize}
+	%		\item 根据需求存在的类型分类
+	%		\begin{itemize}
+		%			\item 基于节点
+		%			\item 基于弧
+		%		\end{itemize}
+	%		\item 是否使用数据驱动分类
+	%		\item 是否考虑随机
+	%	\end{itemize}
+
+
+\section{多机器人系统巡逻问题}
+
+多机器人系统由同一种或者多种机器人组成，在涉及到的巡逻机器人主要包括无人地面车辆(Unmanned Ground Vehicles, UGV)以及无人飞行器(Unmanned Aerial Vehicles, UAV)。这两类机器人由于具备较长的续航时间以及克服复杂地形的能力被广泛运用于军事侦测\citep{liuMemeticAlgorithmsOptimal2015, zhuOptimalRoutingLoading2020}以及灾后救援\cite{zhangHelicopterUAVsSearch2022, alitaehMultirobotExplorationTask2022}的研究中以提升目标搜寻的效率或者目标搜寻的范围。由于对全局信息的缺乏，多机器人在完成上述任务时
+在系统进行全局决策后，多机器人系统根据任务分配完成巡逻任务，
+多机器人系统巡逻是实现xx任务的基础，根据任务所处环境不同，多机器人系统的巡逻主要分为两类：常规巡逻和对抗性巡逻。前者强调在已知全局信息的环境下的巡逻，而后者强调在全局信息不完整环境下基于有限信息的巡逻。
+
+\textbf{常规巡逻}。常规巡逻主要保证被巡逻区域维持的巡逻频率，相关研究侧重于优化机器人的巡逻路线确保巡逻频率(frequency)最大或者未被巡视的间隔(idleness, latency)最短。此时通常考虑循环式巡逻策略(Cyclic Strategies)，决策制定者中心化部署巡逻方案保证巡逻过程中能够覆盖所有的目标点，机器人根据制定好的路径进行持续性巡逻\citep{pasqualettiCooperativePatrollingWeighted2012, hongMultiRobotCooperativePatrolling2019}。\citep{chevaTheoreticalAnalysisMultiagent2004}将巡逻区域建模为一个带权图，并证明了在所有位置同等重要的假设下，最短哈密顿回路是最大程度减少位置平均闲置时间的最佳策略。\citep{stumpMultirobotPersistentSurveillance2011}从带时间窗的车辆路径问题出发，将同一地点的重复访问作为具有不同时间窗口的地点加入到建模中，并加入了访问频率的约束，为了减小问题的规模，设定在较短的时间周期进行求解，得到局部最优解后持续移动时间周期不断进行求解，此种方法虽然不能保证全局的最优性，但是使得问题易于扩展，即在多机器人系统中后续能够添加或删除机器人，确保一定的鲁棒性。多数文献则从最坏情况考虑，因为多机器人系统需要依靠通信进行信息交换、同步，需要减少机器人同步的延迟，因此考虑了优化巡逻中的最长未被巡视间隔\citep{pasqualettiCooperativePatrollingOptimal2012}。\citep{aldana-galvanOptimalCoverageTree2020}用树来描述巡逻节点之间的关系，巡逻的覆盖时间考虑了最长的巡逻路径，机器人需要在特定时间间隔内回到同一个顶点集合。而有的研究放松了在特定节点聚集的约束，但考虑了有限通信距离内的远程信息共享\citep{acevedoOneOneCoordinationAlgorithm2014, diaz-banezSynchronizationProblemInformation2015, schererMinmaxVertexCycle2022, caoGeneralFrameworkMultiUAV2023}。巡逻中断在常规巡逻中也通常会发生，例如机器人故障导致通信同步失效，\citep{beregComputingKresilienceSynchronized2018}定义了$k-$恢复力($k-$ resilience)描述多机器人系统中$k$个机器人失去同步状态需要的最少机器人故障个数以衡量整个系统的稳定性，并证明了该问题属于NP难问题。此外，巡逻中的电池更换也是使得巡逻中断的原因之一\citep{mathewMultirobotRendezvousPlanning2015, trottaJointCoverageConnectivity2018}。
+
+\textbf{对抗性巡逻}。相对于常规性巡逻，对抗性巡逻通常处于不确定环境中，例如海事巡逻、野外军事侦测等。决策制定的过程中通常无法获取全局信息，多机器人系统只能在有限信息的情况下工作。   在任务规划阶段需要考虑多种因素带来的不确定性，执行任务时需要
+在任务规划阶段除了考虑到在巡逻的过程中多机器人系统自身的约束外以外，还需要考虑外部因素对巡逻效率的影响，例如敌方的侦查，此时巡逻与侦查存在博弈过程。\citep{alpernPatrollingGames2011}和\citep{alpernContinuousPatrollingGames2022a}分别从斯塔科尔伯格博弈和攻击者和巡逻者的零和博弈考虑了巡逻问题。如果采取常规巡逻的策略而固定了巡逻路线反而会被侦测，被侦测方制定了对抗策略以后，巡逻的效果反而下降，因此对抗性巡逻并不关注巡逻的频率，而是关注在有限信息的情况下最大化巡逻效率\citep{huangSurveyMultirobotRegular2019}。\citep{zhuOptimalRoutingLoading2020}研究考虑了多机器人协同执行访问任务喝运输任务的情况，在运输过程中机器人会随机受到冲击，造成机器人本身运动功能受损或者损失货物，并考虑避免过度损伤机器人而提前终止返回的情况，目标是最小化机器人损坏成本、货物损坏的成本和未访问目标的预期成本的期望值。\citep{hernandezSelectiveSmoothFictitious2014}基于博弈论中的平滑虚拟博弈模型提出了一种分布式非确定方法用于克服现有的中心化和确定性巡逻方法的局限性。在决策的过程中，每个机器人根据其他机器人在过去选择的策略，更新自己对其他机器人策略的估计，选择最大化自身收益的策略达到纳什均衡。该方法在大多数情况下优于基于中心化决策的确定性方法，并且在分布性、鲁棒性、可拓展性等方面具有优势。对抗性巡逻同样考虑了通信失效，与前面不同的是，此类失效通常是由于自然或者人为的信号干扰造成的，此时需要依靠机器人收集额外信息的同时自主决策，此类涉及去中心化自主决策多主要采取马尔可夫过程或者强化学习方法进行研究\citep{linGraphPatrolProblem2013, leeMultiagentReinforcementLearning2021,  huMOMIXMultiObjectiveMultiAgent2023}。\citep{xiaControllingFleetUnmanned2017a}提出了一种去中心化策略，该策略要求机器人在执行任务期间保持无线电静默，使用区域共享策略来提高效率和安全性，以避免遭受攻击。研究证明了即使在收集额外信息没有奖励的情况下，信息共享策略也是有益的。\citep{moskalUnmannedAerialVehicle2023}考虑了信息收集过程中的不确定性，除了在特定区域搜索到的信息存在不确定性以外，机器人搭载的传感器能否收集到、存在地方侦查威胁、飞行时间的不确定性都加入到模型当中，研究构建了混合整数规划模型，在满足任务时间和安全限制的情况下，控制飞行时间方差维持在一定水平，最大化预期信息收集量，结果表明该模型能够有效减少信息收集时间，并且在实际任务中失败率较低。
+
+\section{考虑时间不确定性的团队定向寻路问题}
+团队定向寻路问题(Team Orienteering Problem, TOP）用于描述决策一系列路径满足时间或者距离约束内最大化地分数收集问题，相比传统的带容量车辆路径问题（Capacitated Vehicle Routing Problem, CVRP），TOP放松了节点访问的约束，因此相比于CVRP更具一般性，所以有较多的应用场景，例如例如居家护理人员调度、农药喷洒任务优化、选择性配送调度、水产养殖服务船舶路线规划、救护车路线规划、旅游行程设计、移动采购员问题、军用车辆路线规划等，针对不同的问题，“分数”有不同的定义。
+
+这里的“分数”针对不同问题有不同的含义。
+
+\section{文献小结与评述}
+
+
+\chapter{研究方案}
+\section{研究框架和主要内容}
+
+%	\begin{enumerate}
+	%		\item 研究人机协同的巡逻中的选址-路由问题。本研究提出一种基于人机协同的巡逻策略，巡逻机器人放置在交通网络的路段中进行巡逻或者处理日常事务，此时警力不需要在巡逻机器人存在的路段进行巡逻，警力有更长的时间覆盖热点，巡逻机器人有一定的放置成本，总的目标确定巡逻机器人摆放的位置以及警察巡逻的路径使得巡逻成本最小化并满足覆盖热点的约束。
+	%		\item 研究基于数据驱动的人机协同热点巡逻问题。数据驱动的方法可以预测和识别可能存在的犯罪热点，由于热点随时间在变化，因此考虑巡逻机器人与警力同时在交通网络进行巡逻。
+	%		\item 研究巡逻时间不确定下人机协同热点巡逻问题。由于交通网络中的旅行时间受到时段的影响，完成巡逻任务时需要保证在固定的工作时间内访问足够多的热点。
+	%	\end{enumerate}
+
+
+\begin{enumerate}
+	\item 考虑选址-路由的人机协同的巡逻问题。本研究提出一种基于人机协同的巡逻策略，巡逻机器人放置在交通网络的路段中进行巡逻或者处理日常事务，此时警力不需要在巡逻机器人存在的路段进行巡逻，警力有更长的时间覆盖热点，巡逻机器人有一定的放置成本，总的目标确定巡逻机器人摆放的位置以及警察巡逻的路径使得巡逻成本最小化并满足覆盖热点的约束。
+	%		\item 考虑热点地区空闲的人机协同巡逻问题。持续性对热点地区的覆盖可以降低犯罪的概率，由于警力资源的有限性，例如警员巡逻时间的限制，原有的巡逻模式难以最大限度对所有地区进行覆盖，警力的缺乏导致热点地区存在空闲时刻，提升了犯罪发生的风险。此外，热点地区的时空变换进一步对警力巡逻的有效性和效率提出了新的要求。巡逻机器人虽然能够提高巡逻的效率，弥补警力缺失带来的空缺，但是巡逻机器人依旧存在电量限制的问题。投入多少巡逻机器人，何时补充电量，人类警察与巡逻机器人的协同中如何衔接是本研究需要解决的问题。
+	\item 随着空闲时间增加，被巡视区域的风险增加，为了降低巡视区域的风险，需要进行持续性地定期巡逻。因此在人机协同的巡逻任务中，多个巡逻机器人负责持续性巡逻以减少人类警察的工作负担，使得人类警察有更多的时间到达热点地区，响应热点地区的紧急事件。巡逻机器人持续性巡逻要求机器人从初始节点出发访问一系列节点之后返回初始节点，巡逻一次的时间可以定义为节点的巡逻频率，巡逻路线过短，虽然能保证较高的巡逻的频率但是巡逻的区域有限，而巡逻路线过长，频率过低，则会导致风险增加。在考虑持续性巡逻的人机协同的巡逻策略时，如何决策巡逻机器人巡逻的区域以及设定合适的巡逻频率保证人机协同巡逻的效率最大化是本研究的重点。
+	\item 考虑巡逻中断的人机协同巡逻问题。巡逻过程中为了解决紧急事件，通常会导致巡逻的中断。在引入巡逻机器人后，机械故障等原因也会导致巡逻中断。巡逻的中断除了导致人机协同的失效，也会降低民众对于执法单位的评价。在设计人机协同的巡逻策略时，如何保持一定的鲁棒性，使得出现巡逻中断时依旧能保持某一个水平的巡逻效率时本研究需要解决的问题。
+\end{enumerate}
+%\chapter{研究计划与进度安排}
+
+\section{研究方法和技术路线}
+
+\section{论文整体结构}
+
+\chapter{研究进度安排}
+
+
+
 
 %%% 致谢
-\include{body/chapter/ack.tex}
+%\include{body/chapter/ack.tex}
 
 
 %%% 参考文献
 %Included for Gather Purpose only:
 %input "ref/refs.bib"
-\bibliographystyle{HUSTThesis}
-\bibliography{ref/thesis}
+%\bibliographystyle{HUSTThesis}
+%\addbibresource[location=local]{OPR.bib}
+%\bibliography{ref/OPR.bib}
+\phantomsection
+\addcontentsline{toc}{chapter}{参考文献}
+\printbibliography[heading=bibliography,title=参考文献]
 
 \makesignature
 
 % ---------------------------------------------
 
 %%% 附录
-%\begin{appendix}
-%  \input{body/appendix/app.tex}
+%\begin{aendix}
+%  \input{body/aendix/a.tex}
 %
-%\end{appendix}
+%\end{aendix}
 
 \end{document}
