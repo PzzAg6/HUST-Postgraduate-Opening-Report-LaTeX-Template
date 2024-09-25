@@ -279,7 +279,28 @@
 % 控制目录风格的宏包
 \RequirePackage{titletoc}
 % 支持引用缩写的宏包
-\RequirePackage[numbers,super,sort&compress]{natbib}
+\RequirePackage[hyperref = true, 
+backend=biber,
+citestyle=gb7714-2015ay, 
+url = false, 
+doi = false,
+gbnamefmt=lowercase, 
+bibstyle = gb7714-2015,
+gbcitelocal=chinese]{biblatex}
+%\setcitestyle{authoryear, open={(},close={)}}
+%\citestyle{authoryear}
+
+%\RequirePackage[authoryear, round, sort&compress]{natbib}
+
+%\usepackage[hyperref = true, 
+%backend=biber,
+%citestyle=gb7714-2015ay, 
+%url = false, 
+%doi = false,
+%gbnamefmt=lowercase, 
+%bibstyle = gb7714-2015,
+%gbcitelocal=chinese]{biblatex}
+
 
 % 生成有书签的 pdf 及其开关，结合 gbk2uni 避免生成乱码
 \ifpdf
@@ -1256,10 +1277,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % 结合 natbib 宏包定义参考文献样式
-\bibpunct{[}{]}{,}{s}{}{,}
-\renewcommand\NAT@citesuper[3]{\ifNAT@swa
-\unskip\kern\p@\textsuperscript{\NAT@@open #1\NAT@@close}%
-   \if*#3*\else\ (#3)\fi\else #1\fi\endgroup}
+%\bibpunct{[}{]}{,}{s}{}{,}
+%\renewcommand\NAT@citesuper[3]{\ifNAT@swa
+%\unskip\kern\p@\textsuperscript{\NAT@@open #1\NAT@@close}%
+%   \if*#3*\else\ (#3)\fi\else #1\fi\endgroup}
 \DeclareRobustCommand\inlinecite{\@inlinecite}
 \def\@inlinecite#1{\begingroup\let\@cite\NAT@citenum\citep{#1}\endgroup}
 \renewenvironment{thebibliography}[1]{

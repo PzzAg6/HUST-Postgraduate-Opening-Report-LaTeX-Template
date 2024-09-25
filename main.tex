@@ -12,7 +12,7 @@
 \setmainfont{Times New Roman}
 
 %\includeonly{body/chap02}
-% \setcitestyle{authoryear, open={（},close={）}}
+% \setcitestyle{authoryear, open={( },close={ )}}
 
 \usepackage[stable]{footmisc}
 \usepackage{xcolor}
@@ -105,7 +105,7 @@
 % \leftlinenumbers% Re-issue [left] option
 % \makeatother
 
-
+\addbibresource[location=local]{ref/OPR.bib}
 
 
 \begin{document}
@@ -134,27 +134,49 @@
 
 % \nolinenumbers
 %%% 结论
-\input{body/chapter/cnn.tex}
-\input{body/chapter/univ.tex}
+%\input{body/chapter/cnn.tex}
+%\input{body/chapter/univ.tex}
 
-%%% 致谢
-\include{body/chapter/ack.tex}
+\chapter{研究背景与意义}
 
 
-%%% 参考文献
-%Included for Gather Purpose only:
-%input "ref/refs.bib"
-\bibliographystyle{HUSTThesis}
-\bibliography{ref/thesis}
+
+
+\chapter{国内外研究现状}
+
+
+
+\section{文献小结与评述}
+
+
+\chapter{研究方案}
+\section{研究框架和主要内容}
+
+
+%\chapter{研究计划与进度安排}
+
+\section{研究方法和技术路线}
+
+\section{论文整体结构}
+
+\chapter{研究进度安排}
+
+
+
+
+
+\phantomsection
+\addcontentsline{toc}{chapter}{参考文献}
+\printbibliography[heading=bibliography,title=参考文献]
 
 \makesignature
 
 % ---------------------------------------------
 
 %%% 附录
-%\begin{appendix}
-%  \input{body/appendix/app.tex}
+%\begin{aendix}
+%  \input{body/aendix/a.tex}
 %
-%\end{appendix}
+%\end{aendix}
 
 \end{document}
