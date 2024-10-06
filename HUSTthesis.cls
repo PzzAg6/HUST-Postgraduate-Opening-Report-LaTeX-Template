@@ -807,9 +807,11 @@ gbcitelocal=chinese]{biblatex}
     \def\@oddhead{%
       \vbox{%
         \parbox[b]{\textwidth}{\centering\sihao%
-          \ziju{0.81em} \kai \bfseries \sanhao[1] \textcolor[RGB]{212,14,14}{\HUST@schoolename\HUST@apply}}
+          \ziju{0.81em} \kai \bfseries \sanhao[1] \textcolor[RGB]{0,0,0}{\HUST@schoolename\HUST@apply}}%red
+%          \ziju{0.81em} \kai \bfseries \sanhao[1]{\HUST@schoolename\HUST@apply}}%black
+%          \HUST@schoolename\HUST@apply
         \vskip6pt
-        \hspace{-4mm} \vbox{\hspace{-3mm} \textcolor[RGB]{212,14,14}{\hrule width 1.04\textwidth height\headrulewidth depth0pt\vskip1pt \hrule width 1.04\textwidth height\headrulewidth}}}}\fi%
+        \hspace{-4mm} \vbox{\hspace{-3mm} \textcolor[RGB]{0,0,0}{\hrule width 1.04\textwidth height\headrulewidth depth0pt\vskip1pt \hrule width 1.04\textwidth height\headrulewidth}}}}\fi%
     \let\@evenhead=\@oddhead
   \ifHUST@finalformat
    \def\@oddfoot{%
@@ -823,7 +825,7 @@ gbcitelocal=chinese]{biblatex}
    \def\@oddfoot{%
      \hbox to \textwidth{%
      \hspace{-4mm}\vbox{%
-     \textcolor[RGB]{212,14,14}
+     \textcolor[RGB]{0,0,0}
       \footrule
       \hfill \hspace{-4mm} \parbox[t]{\textwidth}{\hspace{10mm}\centering\wuhao\thepage\strut} \vspace{3mm}\hfill
       }}}
@@ -1425,7 +1427,7 @@ gbcitelocal=chinese]{biblatex}
 \def\HUST@cdept{院（系、所）\hfill}%
 \def\HUST@UDC{学校代码}
 \def\HUST@secrettitle{密级}
-\def\HUST@apply{研究生开题报告}
+\def\HUST@apply{研究生院}
 \def\HUST@csubject{学\hfill 科\hfill 专\hfill 业}
 \def\HUST@cauthor{学\hfill 位\hfill 申\hfill 请\hfill 人}
 \def\HUST@csupervisor{指\hfill 导\hfill 教\hfill 师}
