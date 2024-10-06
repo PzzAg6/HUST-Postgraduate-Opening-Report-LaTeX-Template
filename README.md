@@ -4,6 +4,13 @@
 - 本模版使用biblatex宏包，并使用`biber`进行编译，如果对样式有需求，请在`HUSTthesis.cls`中查找更改。
 - 如果还需要进一步改动在`HUSTthesis.cls`中搜索关键词进行更改。
 
+## 页眉设定
+- 如果不需要页眉**华中科技大学研究生院**字样，在`main.tex`设定为finalformat。
+- 如果需要修改页眉的文字，在`HUSTthesis.cls`搜索`\def\HUST@apply`进行更改。
+- 如果需要修改页眉页脚以及横线的颜色，在`HUSTthesis.cls`搜索`定义页眉页脚`，里面对应的`\textcolor[RGB]`里面的数值。
+
+
+
 # HUST-PhD-Thesis-Latex
 
 HUSTThesis.cls 2024/01/29 version V3.1.1x
