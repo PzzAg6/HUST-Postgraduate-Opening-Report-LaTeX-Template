@@ -821,7 +821,7 @@ gbcitelocal=chinese]{biblatex}
       }}}
    \else
    \def\footrule{{\vskip-0.3\normalbaselineskip\vskip-\footrulewidth
-   \hrule\@width 1.04\textwidth\@height\footrulewidth\vskip0.45\normalbaselineskip}}
+   \hrule\@width 0\textwidth\@height\footrulewidth\vskip0.45\normalbaselineskip}}
    \def\@oddfoot{%
      \hbox to \textwidth{%
      \hspace{-4mm}\vbox{%
